@@ -17,20 +17,29 @@ describe('Dashboard / Homepage Spec: ', () => {
     cy.get('.form-url').should('exist')
     .type('https://images.unsplash.com/photo-1531898418865-480b7090470f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80')
     .should('have.value', 'https://images.unsplash.com/photo-1531898418865-480b7090470f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80')
+  })
 
+})
+
+describe('HomePage submit flow - POST test:', ()=> {
+
+  beforeEach(()=>{
+    cy.loadMainPage()
+    cy.visit('http://localhost:3000/')
+  })
+
+  it.only('When a user submits a new url, it should appear immediately to the user to indicate that it has been added to the saved urls on the server:', ()=> {
+    cy.get('.form-title').should('exist')
+    .type('this is a test')
+    .should('have.value', 'this is a test')
+
+    cy.get('.form-url').should('exist')
+    .type('this is a test')
+    .should('have.value', 'this is a test')
+
+    cy.loadPostTest()
     cy.get('.submit-button').click()
-  })
 
-  it('When a user submits a new url, it should appear immediately to the user to indicate that it has been added to the saved urls on the server:', ()=> {
-        cy.get('.form-title').should('exist')
-        .type('test2')
-        .should('have.value', 'test2')
-    
-        cy.get('.form-url').should('exist')
-        .type('this.isatest2.gov')
-        .should('have.value', 'this.isatest2.gov')
-    
-        cy.get('.submit-button').click()
+    cy.get('.url-card').last()
   })
-
 })

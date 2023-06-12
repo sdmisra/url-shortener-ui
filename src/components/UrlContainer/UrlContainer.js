@@ -5,7 +5,7 @@ const UrlContainer = props => {
   console.log('container props', props)
   const urlEls = props.urls.map((url, i) => {
     return (
-      <div className="url" key={i}>
+      <div className="url-card" key={i}>
         <h3>{url.title}</h3>
         <a href={url.short_url} target="blank">{url.short_url}</a>
         <p>{url.long_url}</p>
