@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { getUrls, postUrl } from '../../apiCalls';
+import { getUrls, postUrl, deleteUrl } from '../../apiCalls';
 import UrlContainer from '../UrlContainer/UrlContainer';
 import UrlForm from '../UrlForm/UrlForm';
 
@@ -20,7 +20,15 @@ export class App extends Component {
 
   addUrl = (urlToPost) => {
     postUrl(urlToPost)
+    getUrls().then(data =>
+      this.setState({urls: data.urls})
+    )
   }
+
+  // deleteUrl = (deleteEvent) => {
+  //   console.log(deleteEvent)
+  //   // deleteUrl(deleteEvent)
+  // }
 
   render() {
     return (
