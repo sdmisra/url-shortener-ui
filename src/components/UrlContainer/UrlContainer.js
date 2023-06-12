@@ -2,7 +2,6 @@ import React from 'react';
 import './UrlContainer.css';
 
 const UrlContainer = props => {
-  console.log('container props', props)
   const urlEls = props.urls.map((url, i) => {
     return (
       <div className="url-card" key={i}>

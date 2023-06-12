@@ -1,13 +1,23 @@
+const url = 'http://localhost:3001/api/v1/urls'
+
 export const getUrls = async () => {
-  return await fetch('http://localhost:3001/api/v1/urls')
-      .then(response => response.json())
-      .catch(error=> console.log(error))
+  return await fetch(url)
+    .then(response =>{
+        if (!response.ok) {throw new Error(response.status)}
+        return response.json()})
+    .catch(error=> console.log(error))
 }
 
 export const postUrl = async (postOb) => {
-  let url = 'http://localhost:3001/api/v1/urls'
-  return await fetch(url, {method: "POST", headers: {'Content-Type': "application/json"}, body: JSON.stringify(postOb),})
-  .then(response=> response.json())
+  return await fetch(url, 
+    {
+    method: "POST", 
+    headers: {'Content-Type': "application/json"}, 
+    body: JSON.stringify(postOb),
+    })
+  .then(response =>{
+    if (!response.ok) {throw new Error(response.status)}
+    return response.json()})
   .catch(error=> console.log(error))
 }
 

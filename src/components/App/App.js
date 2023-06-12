@@ -14,7 +14,6 @@ export class App extends Component {
 
   componentDidMount() {
     getUrls().then(data=> {
-      console.log(data)
       this.setState({urls: data.urls})
     })
   }
@@ -22,7 +21,6 @@ export class App extends Component {
   addUrl = (urlToPost) => {
     postUrl(urlToPost).then(data=> console.log('post 23', data))
     getUrls().then(data => {
-    console.log(data)
     this.setState({urls: data.urls}
   )})
   }
