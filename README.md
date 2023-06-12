@@ -1,23 +1,4 @@
-### This repo is used as an assessment during the course of the Turing modules, if you are viewing this repository outside the context of an assessment, you’re in violation of the Academic Integrity policy you agreed to as a student.
-
-
-# URL Shortener UI
-
-Our company is building a knock off of the site [bitly](https://bitly.com/) to shorten long links. The site will take in a long link and give the user a shortened link that they can put in their browser and be taken to the original long link.
-
-For example, this app will be able to:
-* Take in a long link like `https://images.unsplash.com/photo-1470114716159-e389f8712fda?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80`
-* Submit the long link to a server
-* The server will give back a short link like `http://localhost:3001/useshorturl/1`
-* The short link will send the user to the same link as the long link! (some server magic that you don't need to worry about)
-
-*Note: the example above will not readily work in the browser*
-
-Wow, that saves a lot of space by making the URL shorter! The back-end API will save all of the URLs that have been submitted to be shortened so the user can come back and use them later.
-
 The back-end server is already setup and ready to go from the back-end team. [The back-end server is located here](https://github.com/turingschool-examples/url-shortener-api).
-
-We need to build a front-end for users to interact with.
 
 ## Setup
 
@@ -61,6 +42,8 @@ Write Cypress tests for the following user flows (don't forget to stub your netw
 
 * When a user fills out and submits the form, the new shortened URL is rendered
 
+## Shane Misra - I believe this is where I got to today, 6/12, for the final assessment!!!! 🤩
+
 ### Iteration 5 (extension)
 
 Add and test sad path functionality. For example:
@@ -70,7 +53,3 @@ Add and test sad path functionality. For example:
 ### Iteration 6 (extension)
 
 Add and test delete functionality for a URL (the server side endpoint already exists).
-
----
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
