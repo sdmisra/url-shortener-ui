@@ -25,7 +25,7 @@ class UrlForm extends Component {
 
   render() {
     return (
-      <form>
+      <form onSubmit={e => this.handleSubmit(e)}>
         <input
           type='text'
           placeholder='Title...'

@@ -5,8 +5,14 @@ describe('Dashboard / Homepage Spec: ', () => {
     cy.visit('http://localhost:3000/')
   })
 
-  it('When a user visits the homepage, they are presented with a title to describe what the app can do:', () => {
+  it('When a user visits the homepage, they are presented with a title and forms to describe what the app can do:', () => {
     cy.get('.app-title').should('be.visible').should('exist').contains('URL Shortener')
+
+    cy.get('.form-title').should('be.visible').should('exist')
+
+    cy.get('.form-url').should('be.visible').should('exist')
+
+    cy.get('.submit-button').should('be.visible').should('exist').contains('Shorten Please!')
   })
 
   it('When a user interacts with the form fields, they are controlled / update state upon each changing value:', ()=> {
